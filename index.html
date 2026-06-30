@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SHAIL — The Intelligence Layer for Everything You Do</title>
+  <meta name="description" content="SHAIL is a local-first AI operating layer that captures context, creates blueprints, injects memory, and guides action across your workspace." />
+  <link rel="stylesheet" href="styles.css?v=8" />
+</head>
+<body>
+  <header class="site-header" id="top">
+    <a class="brand" href="index.html" aria-label="SHAIL home">
+      <img class="brand-logo" src="logo.png" alt="SHAIL logo" />
+      <span class="brand-name">SHAIL</span>
+    </a>
+    <nav class="nav" aria-label="Primary navigation">
+      <a href="index.html#platform">Products</a>
+      <a href="team.html">Team</a>
+      <a href="index.html#architecture">Vision</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="index.html#waitlist">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <a class="text-link" href="index.html#how-it-works">Roadmap</a>
+      <a class="pill-button" href="index.html#waitlist">Join waitlist</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- 1. Hero -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Your work<br>lives<br>everywhere.<br><span class="text-accent">Your AI<br>sees nothing.</span></h1>
+        <p class="hero-subtitle">SHAIL is the context layer for your digital workspace. It connects the dots, so your AI never has to start from zero.</p>
+        <div class="hero-ctas">
+          <a class="pill-button" href="#waitlist">Join waitlist</a>
+          <a class="text-link" href="#how-it-works" style="color: var(--text);">See how it works <span style="color: var(--accent); margin-left: 6px;">→</span></a>
+        </div>
+        
+        <div class="hero-poetry">
+          <div class="red-line"></div>
+          <p>Information <span class="light">is scattered.</span></p>
+          <p>Context <span class="light">is broken.</span></p>
+          <p>Performance <span class="light">suffers.</span></p>
+          <p class="red-text" style="margin-top: 12px;">It's not you.</p>
+          <p class="red-text">It's the system.</p>
+        </div>
+      </div>
+      
+      <div class="hero-visual">
+        <img src="chapter-2.png" alt="SHAIL Memory Graph" />
+      </div>
+    </section>
+
+    <!-- 2. Problem & 3. Why existing AI fails -->
+    <section class="problem" id="problem">
+      <div class="split">
+        <div>
+          <span class="section-label">The Problem</span>
+          <h2>Your context dies every day.</h2>
+          <p class="section-lead">AI made work faster, but it also created a new kind of fragmentation: every model, tab, repository, and document remembers something different.</p>
+        </div>
+        <div class="problem-grid" style="margin-top: 0;">
+          <article class="problem-card">
+            <span>01</span>
+            <h3>Every AI chat starts from zero.</h3>
+            <p>You explain the same project decisions, constraints, and repo details again and again.</p>
+          </article>
+          <article class="problem-card">
+            <span>02</span>
+            <h3>Research disappears into tabs.</h3>
+            <p>Important conversations, links, PRs, notes, and screenshots become hard to retrieve later.</p>
+          </article>
+          <article class="problem-card">
+            <span>03</span>
+            <h3>Tools cannot see each other.</h3>
+            <p>Claude does not know what your IDE knows. Your browser does not know what GitHub knows.</p>
+          </article>
+          <article class="problem-card">
+            <span>04</span>
+            <h3>Agents still need supervision.</h3>
+            <p>Execution is powerful only when it is guided, validated, reversible, and controlled by the user.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. SHAIL Architecture -->
+    <section class="architecture" id="architecture">
+      <span class="section-label">Architecture</span>
+      <h2>A local loop for memory, reasoning, and action.</h2>
+      <p class="section-lead">SHAIL sits between you and your digital workspace. It captures what matters, structures it, retrieves it, and helps you act through the tools you already use.</p>
+      <div class="architecture-board">
+        <div class="arch-node user" style="left: 6%; top: 55px;">User input</div>
+        <div class="arch-node capture" style="left: 27%; top: 55px;">Memory Watchdog</div>
+        <div class="arch-node blueprint" style="left: 48%; top: 55px;">Blueprint Engine</div>
+        <div class="arch-node mind" style="left: 69%; top: 55px;">ShailMind</div>
+        <div class="arch-node router" style="left: 69%; bottom: 55px;">Model Router</div>
+        <div class="arch-node execute" style="left: 48%; bottom: 55px;">Execution Layer</div>
+        <div class="arch-node validate" style="left: 27%; bottom: 55px;">Validation</div>
+        <svg class="arch-lines" viewBox="0 0 900 360" preserveAspectRatio="none" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%;">
+          <path d="M120 90 C220 70 240 70 330 90" />
+          <path d="M430 90 C520 70 540 70 630 90" />
+          <path d="M720 110 C770 170 770 190 720 250" />
+          <path d="M630 270 C540 300 520 300 430 270" />
+          <path d="M330 270 C240 300 220 300 120 270" />
+          <path d="M110 250 C70 190 70 170 110 110" />
+        </svg>
+      </div>
+    </section>
+
+    <!-- 5. How it works -->
+    <section class="how-it-works" id="how-it-works">
+      <span class="section-label">How it works</span>
+      <h2>From raw conversations to usable blueprints.</h2>
+      <div class="split" style="margin-top: 64px;">
+        <div>
+          <h3 style="margin-bottom: 16px;">1. Capture & Structure</h3>
+          <p>SHAIL doesn't just dump transcripts. It converts sessions into structured memory: decisions, action items, entities, open questions, tools, and project links.</p>
+        </div>
+        <pre><code>{
+  "summary": "Workspace capture plan",
+  "key_decisions": ["Blueprint-only free tier"],
+  "action_items": ["Build floating capture bar"],
+  "entities": ["Ollama", "ChromaDB", "MCP"]
+}</code></pre>
+      </div>
+    </section>
+
+    <!-- 6. Product showcase -->
+    <section class="showcase" id="platform">
+      <span class="section-label">Capabilities</span>
+      <h2>Guidance exactly where confusion happens.</h2>
+      <div class="feature-grid">
+        <article class="feature-card">
+          <h3>Quick Query</h3>
+          <p>Ask SHAIL from any page. It searches your memory first, then routes to guidance if the page needs visual help.</p>
+        </article>
+        <article class="feature-card">
+          <h3>Assist Mode</h3>
+          <p>Turn on ambient suggestions for your active goal. SHAIL surfaces one useful blueprint at a time, never a flood.</p>
+        </article>
+        <article class="feature-card">
+          <h3>Ghost Cursor</h3>
+          <p>A glowing ring shows exactly what to click next, then evolves into approved semi-auto and full-auto execution.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- 7. Pricing -->
+    <section class="pricing-section" id="pricing" style="border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);">
+      <span class="section-label" style="text-align: center;">Subscription Plans</span>
+      <h2 style="text-align: center; margin: 0 auto;">Plans for every scale of intelligence</h2>
+      
+      <div class="pricing-grid">
+        <!-- Free Tier -->
+        <article class="price-card">
+          <div class="price-badge">Free forever</div>
+          <div class="price-header">
+            <h3>Free</h3>
+            <div class="price-amount"><strong>$0</strong></div>
+            <div class="price-label">Core local-first memory</div>
+            <p class="price-desc">For individuals who want to capture, index, and own their context locally without cloud dependencies.</p>
+          </div>
+          <a class="price-cta" href="#waitlist">Join Waitlist</a>
+          <div class="price-features-title">What's included</div>
+          <ul class="price-features">
+            <li class="include">Local AI chat capture</li>
+            <li class="include">Retroactive & bulk capture</li>
+            <li class="include">Blueprint generation</li>
+            <li class="include">Local memory search</li>
+            <li class="include">Memory Home dashboard</li>
+            <li class="include">SQLite + ChromaDB storage</li>
+            <li class="include">Basic context injection</li>
+            <li class="include">Open-source core</li>
+            <li class="exclude">Assist Mode suggestions</li>
+            <li class="exclude">Ghost Cursor semi-auto</li>
+            <li class="exclude">Shared team context</li>
+          </ul>
+        </article>
+
+        <!-- Pro Tier -->
+        <article class="price-card pro-card">
+          <div class="price-badge" style="background: var(--text); color: #fff;">Most popular</div>
+          <div class="price-header">
+            <h3>Pro</h3>
+            <div class="price-amount"><strong>$19</strong><span>/month + taxes</span></div>
+            <div class="price-label">Active workspace assistance</div>
+            <p class="price-desc">Unlock assistive execution, advanced memory workflows, and local-first agentic productivity.</p>
+          </div>
+          <a class="price-cta" href="#waitlist">Get Pro</a>
+          <div class="price-features-title">Everything in Free, plus</div>
+          <ul class="price-features">
+            <li class="include">Unlimited Blueprints & Ascents</li>
+            <li class="include">Advanced Assist Mode</li>
+            <li class="include">Advanced context injection</li>
+            <li class="include">Priority context indexing</li>
+            <li class="include">Pro application connectors</li>
+            <li class="include">Ghost Cursor guided mode</li>
+            <li class="include">Ghost Cursor semi-auto actions</li>
+            <li class="include">Smart local model routing</li>
+            <li class="include">Pro workspace views</li>
+            <li class="exclude">Shared team context</li>
+            <li class="exclude">Git-native workspace sync</li>
+          </ul>
+        </article>
+
+        <!-- Teams Tier -->
+        <article class="price-card">
+          <div class="price-header">
+            <h3>Teams</h3>
+            <div class="price-amount"><strong>$39</strong><span>/user/month</span></div>
+            <div class="price-label">Collaborative team intelligence</div>
+            <p class="price-desc">Coordinate context, execution, and workspaces across teams, repositories, and projects.</p>
+          </div>
+          <a class="price-cta" href="#waitlist">Start with Teams</a>
+          <div class="price-features-title">Everything in Pro, plus</div>
+          <ul class="price-features">
+            <li class="include">Shared project Blueprints</li>
+            <li class="include">Team memory graph database</li>
+            <li class="include">Git-native workspace sync</li>
+            <li class="include">Repo-level context packs</li>
+            <li class="include">Team connector management</li>
+            <li class="include">Granular admin controls</li>
+            <li class="include">Workspace privacy policies</li>
+            <li class="include">Compliance & audit logs</li>
+            <li class="include">Shared micro-workspaces</li>
+            <li class="include">Team Ghost Cursor workflows</li>
+            <li class="include">Dedicated onboarding</li>
+          </ul>
+        </article>
+      </div>
+
+      <!-- Enterprise Tier -->
+      <div class="enterprise-row">
+        <div class="enterprise-info">
+          <h3>Enterprise</h3>
+          <p>For organizations requiring private AI orchestration, on-prem self-hosting, single sign-on (SSO), SAML integration, custom security review, and enterprise-grade compliance governance.</p>
+        </div>
+        <div class="enterprise-cta">
+          <a class="pill-button" href="#waitlist" style="margin-bottom: 0;">Talk to us</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. FAQ -->
+    <section class="faq-section" id="faq">
+      <span class="section-label" style="text-align: center;">Common Questions</span>
+      <h2>Frequently asked questions</h2>
+      
+      <div class="faq-grid" style="margin-top: 56px;">
+        <details class="faq-item">
+          <summary>Is SHAIL really free?</summary>
+          <div class="faq-content">
+            Yes. The core local-first memory layer is free forever. This includes local AI chat capture, retroactive capture, blueprint generation, and local search. Since these processes run on your local machine using SQLite and ChromaDB, they do not incur server costs, allowing us to keep them free.
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>What is open-source?</summary>
+          <div class="faq-content">
+            The local capture pipeline, Blueprint engine, and storage framework are open-source. We believe that the foundational database of your digital work history must be transparent, verifiable, and completely under your control where privacy and trust matter most.
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>Why pay for Pro?</summary>
+          <div class="faq-content">
+            Pro unlocks the active layer of SHAIL. This includes Assist Mode (which gives ambient contextual suggestions), advanced context injection, priority indexing, and Ghost Cursor guided/semi-automatic workflow execution where SHAIL starts acting on your behalf in the browser.
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>Does my data leave my machine?</summary>
+          <div class="faq-content">
+            No, not by default. SHAIL is designed with a local-first architecture. All context capture, indexing, and search happen on your local computer. Cloud reasoning is completely optional and only engaged if you route tasks to cloud models.
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- 9. Join Waitlist -->
+    <section class="waitlist" id="waitlist">
+      <div class="waitlist-card">
+        <span class="eyebrow" style="margin-bottom: 12px; display: inline-block;">Private beta</span>
+        <h2>Join the waitlist for the local-first AI OS.</h2>
+        <p class="hero-subtitle">Get early access to capture, blueprint memory, context injection, Quick Query, and the first Ghost Cursor preview.</p>
+        <form class="waitlist-form" id="bottom-waitlist">
+          <input type="email" placeholder="you@company.com" aria-label="Email address" required />
+          <button type="submit" class="pill-button" style="border-radius: 999px;">Request access</button>
+        </form>
+        <p class="form-message" id="form-message" aria-live="polite" style="min-height: 24px; color: var(--accent); margin-top: 16px;"></p>
+      </div>
+    </section>
+  </main>
+
+  <!-- 10. Footer -->
+  <footer class="footer">
+    <div>
+      <strong>SHAIL</strong>
+      <p>The intelligence layer between humans, software, and AI.</p>
+    </div>
+    <div class="footer-links">
+      <a href="index.html#platform">Products</a>
+      <a href="team.html">Team</a>
+      <a href="index.html#architecture">Vision</a>
+      <a href="index.html#how-it-works">Roadmap</a>
+      <a href="pricing.html">Pricing</a>
+    </div>
+  </footer>
+
+  <script src="waves.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
