@@ -80,11 +80,11 @@ const animationConfig = {
 function initWaves() {
     const container = document.createElement('div');
     container.className = 'waves-container';
-    container.style.position = 'absolute';
+    container.style.position = 'fixed';
     container.style.top = '0';
     container.style.left = '0';
-    container.style.width = '100%';
-    container.style.height = '100%';
+    container.style.width = '100vw';
+    container.style.height = '100vh';
     container.style.zIndex = '0'; // Place behind everything
     container.style.pointerEvents = 'none'; // Allow clicks to pass through
     container.style.overflow = 'hidden';
@@ -103,7 +103,7 @@ function initWaves() {
         noise: new Noise(Math.random()),
         bounding: null,
         animationFrameId: null,
-        lineColor: 'rgba(0, 0, 0, 0.15)', // Darkened another 5%
+        lineColor: 'rgba(0, 0, 0, 0.20)', // Darkened another 5%
     };
 
     const moved = (point, withCursorForce = true) => {
@@ -117,16 +117,9 @@ function initWaves() {
     };
 
     const setSize = () => {
-        // Measure the full document height to cover the entire page
-        const width = document.documentElement.scrollWidth;
-        const height = document.documentElement.scrollHeight;
-        
-        container.style.width = width + 'px';
-        container.style.height = height + 'px';
-        
-        state.bounding = { left: 0, top: 0, width, height };
-        canvas.width = width;
-        canvas.height = height;
+        state.bounding = container.getBoundingClientRect();
+        canvas.width = state.bounding.width;
+        canvas.height = state.bounding.height;
     };
 
     const setLines = () => {
@@ -262,12 +255,12 @@ function initWaves() {
     };
     
     const onResize = () => { setSize(); setLines(); };
-    // Listen on window for mouse move to capture correctly across full document
+    // Listen on window for mouse move to capture correctly across page
     window.addEventListener("mousemove", (e) => { 
-        updateMousePosition(e.pageX, e.pageY); 
+        updateMousePosition(e.clientX, e.clientY); 
     });
     window.addEventListener("touchmove", (e) => {
-        updateMousePosition(e.touches[0].pageX, e.touches[0].pageY);
+        updateMousePosition(e.touches[0].clientX, e.touches[0].clientY);
     }, { passive: true });
 
     window.addEventListener("resize", onResize);
