@@ -246,11 +246,11 @@ function initWaves(options = {}) {
         state.animationFrameId = requestAnimationFrame(tick);
     };
 
-    const updateMousePosition = (x, y) => {
-        if (!state.bounding) return;
+    const updateMousePosition = (clientX, clientY) => {
+        const rect = container.getBoundingClientRect();
         const { mouse } = state;
-        mouse.x = x - state.bounding.left;
-        mouse.y = y - state.bounding.top;
+        mouse.x = clientX - rect.left;
+        mouse.y = clientY - rect.top;
         if (!mouse.set) {
             mouse.sx = mouse.x;
             mouse.sy = mouse.y;
@@ -292,7 +292,7 @@ document.addEventListener("DOMContentLoaded", () => {
         initWaves({
             target: waitlist,
             position: 'absolute',
-            lineColor: 'rgba(255, 255, 255, 0.25)',
+            lineColor: 'rgba(255, 255, 255, 0.8)', // Much higher opacity to ensure visibility
             zIndex: '0'
         });
     }
