@@ -77,22 +77,28 @@ const animationConfig = {
     MAX_CURSOR_DISPLACEMENT: 100,
 };
 
-function initWaves() {
+function initWaves(options = {}) {
+    const {
+        target = document.body,
+        position = 'fixed',
+        lineColor = 'rgba(0, 0, 0, 0.20)',
+        zIndex = '0'
+    } = options;
+
     const container = document.createElement('div');
     container.className = 'waves-container';
-    container.style.position = 'fixed';
+    container.style.position = position;
     container.style.top = '0';
     container.style.left = '0';
-    container.style.width = '100vw';
-    container.style.height = '100vh';
-    container.style.zIndex = '0'; // Place behind everything
+    container.style.width = position === 'fixed' ? '100vw' : '100%';
+    container.style.height = position === 'fixed' ? '100vh' : '100%';
+    container.style.zIndex = zIndex; // Place behind everything
     container.style.pointerEvents = 'none'; // Allow clicks to pass through
     container.style.overflow = 'hidden';
     
-    // We want the background behind the waves to just be transparent so the page background shows
     const canvas = document.createElement('canvas');
     container.appendChild(canvas);
-    document.body.insertBefore(container, document.body.firstChild);
+    target.insertBefore(container, target.firstChild);
 
     const ctx = canvas.getContext('2d');
     
@@ -103,7 +109,7 @@ function initWaves() {
         noise: new Noise(Math.random()),
         bounding: null,
         animationFrameId: null,
-        lineColor: 'rgba(0, 0, 0, 0.20)', // Darkened another 5%
+        lineColor: lineColor,
     };
 
     const moved = (point, withCursorForce = true) => {
@@ -271,4 +277,23 @@ function initWaves() {
 }
 
 // Initialize waves once the DOM is loaded
-document.addEventListener("DOMContentLoaded", initWaves);
+document.addEventListener("DOMContentLoaded", () => {
+    // 1. Global dark waves
+    initWaves({
+        target: document.body,
+        position: 'fixed',
+        lineColor: 'rgba(0, 0, 0, 0.20)',
+        zIndex: '0'
+    });
+
+    // 2. Waitlist specific white waves (on red background)
+    const waitlist = document.getElementById('waitlist');
+    if (waitlist) {
+        initWaves({
+            target: waitlist,
+            position: 'absolute',
+            lineColor: 'rgba(255, 255, 255, 0.25)',
+            zIndex: '0'
+        });
+    }
+});
