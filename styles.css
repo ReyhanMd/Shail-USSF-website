@@ -185,6 +185,7 @@ section { padding: 120px 5vw; }
   justify-content: center;
   align-items: center;
   transform: translateY(-98px) scale(1.03);
+  margin-bottom: -98px; /* Compensate for translateY space */
 }
 .hero-visual img {
   width: 110%;
@@ -197,7 +198,7 @@ section { padding: 120px 5vw; }
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 120px 0 80px;
+  margin: 24px 0 16px; /* Reduced by 80% */
   width: 100%;
 }
 .scroll-zoom-image {
