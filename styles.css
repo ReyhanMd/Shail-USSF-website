@@ -184,8 +184,8 @@ section { padding: 120px 5vw; }
   display: flex;
   justify-content: center;
   align-items: center;
-  transform: translateY(-98px) scale(1.03);
-  margin-bottom: -98px; /* Compensate for translateY space */
+  transform: translate(-80px, -118px) scale(1.2);
+  margin-bottom: -118px; /* Compensate for translateY space */
 }
 .hero-visual img {
   width: 110%;
