@@ -183,13 +183,13 @@ section { padding: 120px 5vw; }
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  align-self: start;
 }
 .hero-visual img {
   width: 110%;
   max-width: 900px;
   object-fit: contain;
-  transform: translateY(-60px);
 }
 
 /* Grids & Cards */
