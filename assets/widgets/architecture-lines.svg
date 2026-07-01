@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 360" preserveAspectRatio="none">
+  <defs>
+    <style>
+      .arch-path { fill: none; stroke: rgba(255, 255, 255, 0.15); stroke-width: 1.5px; stroke-dasharray: 4 4; }
+    </style>
+  </defs>
+  <path class="arch-path" d="M120 90 C220 70 240 70 330 90" />
+  <path class="arch-path" d="M430 90 C520 70 540 70 630 90" />
+  <path class="arch-path" d="M720 110 C770 170 770 190 720 250" />
+  <path class="arch-path" d="M630 270 C540 300 520 300 430 270" />
+  <path class="arch-path" d="M330 270 C240 300 220 300 120 270" />
+  <path class="arch-path" d="M110 250 C70 190 70 170 110 110" />
+</svg>

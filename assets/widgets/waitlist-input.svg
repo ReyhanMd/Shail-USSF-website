@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="60" viewBox="0 0 400 60">
+  <defs>
+    <!-- Waitlist has a red background, but we make this transparent so it fits anywhere -->
+  </defs>
+
+  <!-- Input Field Background -->
+  <g id="input-bg">
+    <rect width="400" height="60" rx="30" fill="rgba(0, 0, 0, 0.2)" stroke="rgba(255, 255, 255, 0.4)" stroke-width="1.5" />
+  </g>
+
+  <!-- Input Text Placeholder -->
+  <g id="input-text" transform="translate(24, 35)">
+    <text x="0" y="0" font-family="system-ui, sans-serif" font-size="16" fill="rgba(255, 255, 255, 0.7)">name@company.com</text>
+  </g>
+
+  <!-- Submit Button (Pill inside Pill) -->
+  <g id="submit-button" transform="translate(260, 6)">
+    <rect width="134" height="48" rx="24" fill="#ffffff" />
+    <text x="67" y="29" font-family="system-ui, sans-serif" font-size="15" font-weight="bold" fill="#000000" text-anchor="middle">Join Waitlist</text>
+  </g>
+</svg>
