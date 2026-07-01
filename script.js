@@ -70,11 +70,12 @@ if (scrollImage) {
 
 // Initialize Orchestrate Particles
 const initParticles = () => {
+  const section = document.getElementById('home-image-section');
   const container = document.getElementById('particle-container');
-  if (!container) return;
+  if (!section || !container) return;
 
   const particleCount = 500;
-  const colors = ['#EB473D', '#111111', '#CCCCCC', '#888888']; // SHAIL light mode colors
+  const colors = ['#EB473D', '#ffffff', '#fafafa', '#a0a0a0']; // Website brand colors and white
   
   const random = (min, max) => Math.random() * (max - min) + min;
   const randomColor = () => colors[Math.floor(Math.random() * colors.length)];
@@ -106,6 +107,23 @@ const initParticles = () => {
   }
   
   container.appendChild(fragment);
+
+  // Map scroll progress to the --scroll CSS variable for the animation delay
+  window.addEventListener('scroll', () => {
+    const rect = section.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
+    
+    // When the top of the section enters the bottom of the viewport, progress is 0.
+    // When the bottom of the section leaves the top of the viewport, progress is 1.
+    const start = windowHeight;
+    const end = -rect.height;
+    
+    let progress = (start - rect.top) / (start - end);
+    progress = Math.max(0, Math.min(1, progress));
+    
+    // Set the scroll variable for CSS
+    section.style.setProperty('--scroll', progress);
+  }, { passive: true });
 };
 
 initParticles();

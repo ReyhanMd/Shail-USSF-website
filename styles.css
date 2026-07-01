@@ -193,63 +193,47 @@ section { padding: 120px 5vw; }
   object-fit: contain;
 }
 
-/* Orchestrate Particle Animation */
-.orchestrate-section {
+/* Particle Animation Background (Behind Image) */
+.home-image-section {
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 24px 0 16px;
   width: 100%;
-  height: 100vh;
+  perspective: 100vmin;
+}
+.scroll-zoom-container {
+  position: relative;
+  z-index: 10;
+}
+.particle-container {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
-  background: #ffffff; /* Light mode */
-  perspective: 100vmin;
-  margin-bottom: -100px; /* Pull up following section */
-}
-.particle-container {
-  position: relative;
-  width: 100vmin;
-  height: 100vmin;
-  display: grid;
-  place-items: center;
-  grid-template-columns: 1fr;
+  z-index: 0;
+  pointer-events: none;
 }
 .particle {
   position: absolute;
-  width: 40%;
+  width: 40vmin;
   height: 1px;
   will-change: transform, opacity;
   transform-style: preserve-3d;
   transform-origin: 0 center;
-  animation: particleMove var(--duration) linear infinite;
-  animation-delay: var(--delay);
+  /* Tied to scroll variable instead of time */
+  animation: particleMove var(--duration) linear infinite paused;
+  animation-delay: calc((var(--scroll, 0) * -10s) + var(--delay));
   background: linear-gradient(to left, var(--color), transparent var(--transparentStop));
 }
 @keyframes particleMove {
   0% { transform: translateX(50%) rotateX(var(--rX)) rotateY(var(--rY)) rotateZ(var(--rZ)) scale(2); opacity: 0; }
   20% { opacity: 1; }
   100% { transform: translateX(50%) rotateX(var(--rX)) rotateY(var(--rY)) rotateZ(var(--rZ)) scale(0); opacity: 1; }
-}
-.orchestrate-text {
-  position: absolute;
-  z-index: 10;
-  text-align: center;
-  font-size: clamp(3rem, 8vw, 7rem);
-  line-height: 1;
-  font-weight: 600;
-  letter-spacing: -0.05em;
-  pointer-events: none;
-  white-space: pre-wrap;
-  color: #111111; /* Dark text for light mode */
-}
-
-/* Scroll Zoom Image */
-.home-image-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 24px 0 16px; /* Reduced by 80% */
-  width: 100%;
 }
 .scroll-zoom-image {
   max-width: 90vw;
