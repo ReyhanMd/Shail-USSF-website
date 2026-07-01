@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1000" viewBox="0 0 1000 1000" preserveAspectRatio="none">
   <defs>
     <linearGradient id="fabricGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="currentColor" stop-opacity="0.1"/>
-      <stop offset="50%" stop-color="currentColor" stop-opacity="0.3"/>
-      <stop offset="100%" stop-color="currentColor" stop-opacity="0.1"/>
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.05"/>
+      <stop offset="50%" stop-color="#ffffff" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.05"/>
     </linearGradient>
   </defs>
   <rect width="1000" height="1000" fill="transparent" />
