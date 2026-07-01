@@ -137,7 +137,7 @@ section { padding: 120px 5vw; }
   min-height: 100vh; 
   padding: 160px 5vw 80px; 
   display: grid; 
-  grid-template-columns: 1fr 1.3fr; 
+  grid-template-columns: 3fr 7fr; 
   gap: 40px; 
   align-items: center; 
 }
