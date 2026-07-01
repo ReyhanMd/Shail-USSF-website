@@ -46,3 +46,24 @@ if (brandLogo && mainEl) {
     }
   });
 }
+
+// Scroll animation for enlarging image
+const observerOptions = {
+  root: null,
+  rootMargin: '0px',
+  threshold: 0.15
+};
+
+const imageObserver = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('is-visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, observerOptions);
+
+const scrollImage = document.querySelector('.scroll-zoom-image');
+if (scrollImage) {
+  imageObserver.observe(scrollImage);
+}

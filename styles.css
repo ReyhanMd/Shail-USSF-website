@@ -184,12 +184,33 @@ section { padding: 120px 5vw; }
   display: flex;
   justify-content: center;
   align-items: center;
-  transform: translateY(-60px);
+  transform: translateY(-98px) scale(1.03);
 }
 .hero-visual img {
   width: 110%;
   max-width: 900px;
   object-fit: contain;
+}
+
+/* Scroll Zoom Image */
+.home-image-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 120px 0 80px;
+  width: 100%;
+}
+.scroll-zoom-image {
+  max-width: 90vw;
+  width: 1200px;
+  border-radius: 12px;
+  transform: scale(0.92);
+  opacity: 0;
+  transition: transform 1.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 1.5s ease-out;
+}
+.scroll-zoom-image.is-visible {
+  transform: scale(1);
+  opacity: 1;
 }
 
 /* Grids & Cards */
