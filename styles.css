@@ -217,6 +217,9 @@ section { padding: 120px 5vw; }
   justify-content: center;
   z-index: 0;
   pointer-events: none;
+  transform-style: preserve-3d;
+  /* Scroll parallax movement */
+  transform: translateY(calc((var(--scroll, 0.5) - 0.5) * -150px)) scale(calc(1 + (var(--scroll, 0) * 0.1)));
 }
 .particle {
   position: absolute;
@@ -225,9 +228,9 @@ section { padding: 120px 5vw; }
   will-change: transform, opacity;
   transform-style: preserve-3d;
   transform-origin: 0 center;
-  /* Tied to scroll variable instead of time */
-  animation: particleMove var(--duration) linear infinite paused;
-  animation-delay: calc((var(--scroll, 0) * -10s) + var(--delay));
+  /* Plays continuously */
+  animation: particleMove var(--duration) linear infinite;
+  animation-delay: var(--delay);
   background: linear-gradient(to left, var(--color), transparent var(--transparentStop));
 }
 @keyframes particleMove {
