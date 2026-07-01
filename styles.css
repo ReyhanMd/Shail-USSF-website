@@ -239,13 +239,11 @@ section { padding: 120px 5vw; }
   max-width: 90vw;
   width: 1200px;
   border-radius: 12px;
-  transform: scale(0.92);
-  opacity: 0;
-  transition: transform 1.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 1.5s ease-out;
-}
-.scroll-zoom-image.is-visible {
-  transform: scale(1);
-  opacity: 1;
+  /* Starts at scale 0.85 when scroll is 0, hits scale 1.0 when scroll is around 0.5 (center screen) */
+  transform: scale(calc(0.85 + (var(--scroll, 0) * 0.3)));
+  /* Starts at opacity 0.2, hits opacity 1.0 quickly as it enters screen */
+  opacity: calc(0.2 + (var(--scroll, 0) * 1.5));
+  will-change: transform, opacity;
 }
 
 /* Grids & Cards */
