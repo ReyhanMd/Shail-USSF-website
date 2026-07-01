@@ -1,17 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
 :root {
-  --bg: #FAFAF8;
-  --bg: #FAFAF8;
+  --bg: #000000;
   --bg-soft: transparent;
-  --card: rgba(255, 255, 255, 0.6);
+  --card: rgba(255, 255, 255, 0.05);
   --card-2: transparent;
-  --text: #1A1A1A;
-  --muted: #6B6B6B;
-  --line: rgba(26, 26, 26, 0.1);
+  --text: #ffffff;
+  --muted: #a0a0a0;
+  --line: rgba(255, 255, 255, 0.15);
   --accent: #EB473D;
-  --accent-soft: rgba(235, 71, 61, 0.05);
-  --shadow: 0 12px 40px rgba(0, 0, 0, 0.04), 0 2px 8px rgba(0, 0, 0, 0.02);
+  --accent-soft: rgba(235, 71, 61, 0.1);
+  --shadow: 0 12px 40px rgba(0, 0, 0, 0.8), 0 2px 8px rgba(0, 0, 0, 0.4);
   font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
 }
 
@@ -19,7 +18,11 @@
 html { scroll-behavior: smooth; }
 body {
   margin: 0;
-  background: var(--bg);
+  background-color: var(--bg);
+  background-image: url('assets/backgrounds/fabric-tiled.svg');
+  background-size: 800px;
+  background-position: top center;
+  background-repeat: repeat;
   color: var(--text);
   overflow-x: hidden;
   opacity: 0;
@@ -287,6 +290,7 @@ section { padding: 120px 5vw; }
   position: relative;
   overflow: hidden;
   background-color: var(--accent);
+  background-image: none;
   color: #FFFFFF;
   padding: 262px 5vw 80px;
 }
@@ -297,12 +301,12 @@ section { padding: 120px 5vw; }
   color: rgba(255, 255, 255, 0.9);
 }
 .waitlist .eyebrow {
-  color: rgba(255, 255, 255, 0.8);
-  border-color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.9);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 .waitlist input {
   background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   color: #FFFFFF;
 }
 .waitlist input::placeholder {
@@ -328,7 +332,8 @@ input::placeholder { color: #A0A0A0; }
 
 /* Footer - Dark Exact Layout */
 .footer-dark {
-  background-color: #0A0A0A;
+  background-color: #000000;
+  background-image: none;
   color: #E0E0E0;
   padding: 80px 5vw 40px;
   position: relative;
