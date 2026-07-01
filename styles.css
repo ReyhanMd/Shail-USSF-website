@@ -189,6 +189,7 @@ section { padding: 120px 5vw; }
   width: 110%;
   max-width: 900px;
   object-fit: contain;
+  transform: translateY(-60px);
 }
 
 /* Grids & Cards */
