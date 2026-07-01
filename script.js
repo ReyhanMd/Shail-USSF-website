@@ -67,3 +67,46 @@ const scrollImage = document.querySelector('.scroll-zoom-image');
 if (scrollImage) {
   imageObserver.observe(scrollImage);
 }
+
+// Initialize Orchestrate Particles
+const initParticles = () => {
+  const container = document.getElementById('particle-container');
+  if (!container) return;
+
+  const particleCount = 500;
+  const colors = ['#EB473D', '#111111', '#CCCCCC', '#888888']; // SHAIL light mode colors
+  
+  const random = (min, max) => Math.random() * (max - min) + min;
+  const randomColor = () => colors[Math.floor(Math.random() * colors.length)];
+  const randomRotation = () => random(-180, 180);
+
+  const fragment = document.createDocumentFragment();
+
+  for (let i = 0; i < particleCount; i++) {
+    const particle = document.createElement('div');
+    particle.className = 'particle';
+    
+    const duration = random(1, 5);
+    const delay = -random(0.1, 2);
+    const rotateX = randomRotation();
+    const rotateY = randomRotation();
+    const rotateZ = randomRotation();
+    const color = randomColor();
+    const transparentStop = random(50, 100);
+
+    particle.style.setProperty('--duration', `${duration}s`);
+    particle.style.setProperty('--delay', `${delay}s`);
+    particle.style.setProperty('--rX', `${rotateX}deg`);
+    particle.style.setProperty('--rY', `${rotateY}deg`);
+    particle.style.setProperty('--rZ', `${rotateZ}deg`);
+    particle.style.setProperty('--color', color);
+    particle.style.setProperty('--transparentStop', `${transparentStop}%`);
+    
+    fragment.appendChild(particle);
+  }
+  
+  container.appendChild(fragment);
+};
+
+initParticles();
+
